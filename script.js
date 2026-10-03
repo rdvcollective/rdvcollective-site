@@ -30,15 +30,6 @@
     link.addEventListener("click", closeMenu);
   });
 
-  document.querySelectorAll(".snap-chapter").forEach((chapter) => {
-    const track = chapter.querySelector(".snap-track");
-    chapter.querySelectorAll("[data-snap]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        track.scrollBy({ left: Number(btn.dataset.snap) * track.clientWidth * 0.8, behavior: "smooth" });
-      });
-    });
-  });
-
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
