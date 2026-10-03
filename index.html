@@ -16,23 +16,28 @@
     <meta name="twitter:description" content="Places. People. Curated Moments. Thoughtful wedding planning, guest hospitality, and event production in Vancouver.">
     <meta name="twitter:image" content="images/rdv-banner.png">
     <meta name="twitter:image:alt" content="Rendezvous Collective — Places. People. Curated Moments.">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.png?v=3" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
   </head>
   <body>
     <main id="top">
       <header class="site-header">
         <a href="#top" class="brand" aria-label="Rendezvous Collective home">
-          <img class="brand-logo" src="images/rdv-monogram.png" alt="Rendezvous Collective">
+          <img class="brand-logo" src="images/rdv-horizontal-logo.png" alt="Rendezvous Collective">
         </a>
         <nav class="nav" id="main-nav" aria-label="Main navigation">
           <button type="button" data-scroll="approach">Our approach</button>
           <button type="button" data-scroll="services">What we do</button>
           <button type="button" data-scroll="weddings">Weddings</button>
-          <button type="button" data-scroll="gatherings">Gatherings</button>
-          <button type="button" class="nav-inquire" data-open-inquiry>Start a conversation <span aria-hidden="true">↗</span></button>
+          <button type="button" data-scroll="gatherings">Corporate events</button>
+          <button type="button" data-scroll="snapshots">Snapshots</button>
+          <a class="nav-inquire" href="mailto:alaina@rdvcollective.com?subject=Let%27s%20Plan%20Something%20Together">Contact us</a>
         </nav>
+        <a class="header-contact" href="mailto:alaina@rdvcollective.com?subject=Let%27s%20Plan%20Something%20Together">Contact us</a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
           <span class="menu-icon" aria-hidden="true"></span>
         </button>
@@ -48,7 +53,6 @@
         <div class="hero-visual">
           <img src="images/wedding-ceremony.jpg" alt="A couple walking through an outdoor wedding ceremony with their guests">
           <span class="image-note">A celebration, thoughtfully considered.</span>
-          <div class="hero-stamp" aria-hidden="true"><span>R</span><small>Since<br>the beginning</small></div>
         </div>
         <div class="hero-side-note" aria-hidden="true">GATHER WELL, REMEMBER LONGER</div>
       </section>
@@ -72,11 +76,11 @@
           <p>Good hosting feels effortless. Behind it is a hundred considered decisions—and someone who knows how to bring them all together.</p>
         </div>
         <div class="service-list">
-          <article class="service-row"><span class="service-n">01</span><h3 class="serif">Event strategy &amp; planning</h3><p>A clear point of view, a thoughtful plan, and the right details in the right hands.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-n">02</span><h3 class="serif">Places &amp; stays</h3><p>Venue and hotel sourcing shaped around your people, purpose, and the way you want it to feel.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-n">03</span><h3 class="serif">People &amp; partners</h3><p>A trusted circle of collaborators, brought together with care and coordinated with ease.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-n">04</span><h3 class="serif">Creative details</h3><p>The finishing touches that make a gathering feel unmistakably yours.</p><span class="service-mark" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-n">05</span><h3 class="serif">On-the-ground execution</h3><p>Hands-on, quietly capable support from first arrival to final farewell.</p><span class="service-mark" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-n">01</span><h3 class="serif">Event strategy &amp; planning</h3><p>A clear point of view, a thoughtful plan, and the right details in the right hands.</p></article>
+          <article class="service-row"><span class="service-n">02</span><h3 class="serif">Places &amp; stays</h3><p>Venue and hotel sourcing shaped around your people, purpose, and the way you want it to feel.</p></article>
+          <article class="service-row"><span class="service-n">03</span><h3 class="serif">People &amp; partners</h3><p>A trusted circle of collaborators, brought together with care and coordinated with ease.</p></article>
+          <article class="service-row"><span class="service-n">04</span><h3 class="serif">Creative details</h3><p>The finishing touches that make a gathering feel unmistakably yours.</p></article>
+          <article class="service-row"><span class="service-n">05</span><h3 class="serif">On-the-ground execution</h3><p>Hands-on, quietly capable support from first arrival to final farewell.</p></article>
         </div>
       </section>
 
@@ -103,62 +107,63 @@
           <article class="wedding-support-card"><h3 class="serif">The details &amp; the day</h3><p>Cricut signage, personalized event details, décor, printed elements, floral design with a trusted florist, setup, installation, vendor coordination, takedown, and wedding-day production.</p></article>
         </div>
         <div class="wedding-gallery" id="wedding-details" role="group" aria-label="Wedding portfolio details">
-          <figure><img src="images/wedding-welcome.jpeg" alt="Wedding welcome details alongside a floral installation" loading="lazy"><figcaption>A warm welcome</figcaption></figure>
-          <figure><img src="images/wedding-bouquet.jpeg" alt="A bride carrying a white bouquet" loading="lazy"><figcaption>Flowers, thoughtfully chosen</figcaption></figure>
-          <figure><img src="images/wedding-table-detail.jpeg" alt="A candlelit reception table with flowers and place settings" loading="lazy"><figcaption>The finishing touches</figcaption></figure>
+          <figure><img src="images/wedding-welcome.jpeg" alt="A candlelit reception table with white roses, a table number, and glassware" loading="lazy"><figcaption>Tables worth lingering at</figcaption></figure>
+          <figure><img src="images/wedding-bouquet.jpeg" alt="An arched mirror welcome sign reading welcome to our love story" loading="lazy"><figcaption>Signage made for their story</figcaption></figure>
+          <figure><img src="images/wedding-table-detail.jpeg" alt="A floral centerpiece with a lantern and a heart-shaped table number" loading="lazy"><figcaption>Details that feel personal</figcaption></figure>
         </div>
       </section>
 
-      <section class="occasion-section" id="gatherings">
-        <div class="occasion-image">
-          <img src="images/wedding-tables.jpeg" alt="Tables set for a wedding dinner with candles and flowers" loading="lazy">
-          <span class="image-note">The right place changes everything.</span>
+      <section class="corp" id="gatherings">
+        <div class="corp-head">
+          <p class="eyebrow">Corporate &amp; private events</p>
+          <h2 class="serif">Gatherings that give people <em>a reason to connect.</em></h2>
+          <p class="corp-lead">From multi-day retreats to intimate executive dinners, we design experiences around the audience and the purpose, with the operational care to deliver them.</p>
         </div>
-        <div class="occasion-copy">
-          <p class="eyebrow">Gather for what matters</p>
-          <h2 class="serif">Every reason<br>to come <em>together.</em></h2>
-          <p class="occasion-lead">Different occasions call for different kinds of care. We bring the same thoughtful attention to each.</p>
-          <div class="occasion-list">
-            <div><span>01</span>Corporate events &amp; retreats<span class="occasion-arrow" aria-hidden="true">↗</span></div>
-            <div><span>02</span>Dinners &amp; private gatherings<span class="occasion-arrow" aria-hidden="true">↗</span></div>
-            <div><span>03</span>Weddings &amp; celebrations<span class="occasion-arrow" aria-hidden="true">↗</span></div>
-          </div>
+        <article class="corp-block"><div class="corp-text"><h3 class="serif">Corporate retreats &amp; activations</h3><p>Multi-day programs designed around connection, participation, and shared experience, with original themed competitions and interactive programming that gets people involved rather than simply attending.</p><p class="corp-tags">Destination &amp; hotel sourcing · Travel &amp; room blocks · Food &amp; beverage · Activities · Onsite execution</p></div><div class="corp-photos"><img class="corp-main" src="images/corp-retreat-karts.jpg" alt="Colleagues lined up in go-karts on an indoor track" loading="lazy"><img src="images/corp-retreat-paintball.jpg" alt="A large team gathered in the forest for a group photo" loading="lazy"><img src="images/corp-retreat-dunes.jpg" alt="Dune buggies parked on sand under colorful flags" loading="lazy"></div></article>
+        <article class="corp-block"><div class="corp-text"><h3 class="serif">Client &amp; executive experiences</h3><p>Executive dinners, industry roundtables, and multi-day client trips, planned around the people in the room and the destination.</p><p class="corp-tags">Private dinners · Roundtables · Networking · Multi-day client trips · Guest logistics</p></div><div class="corp-photos"><img class="corp-main" src="images/corp-dinner-room.jpg" alt="A private dining room with a long table set beside a fireplace" loading="lazy"><img src="images/corp-dinner-platter.jpg" alt="A styled grazing spread with flowers" loading="lazy"><img src="images/corp-dinner-table.jpg" alt="A long private dining table set for an executive dinner" loading="lazy"></div></article>
+        <article class="corp-block"><div class="corp-text"><h3 class="serif">Signature events &amp; celebrations</h3><p>Networking evenings, social experiences, and large-format gatherings where atmosphere, guest experience, and seamless execution come together.</p><p class="corp-tags">Corporate gatherings · Celebrations · Hospitality · Production</p></div><div class="corp-photos"><img class="corp-main" src="images/corp-event-ballroom.jpg" alt="Guests seated for dinner in a candlelit ballroom" loading="lazy"><img src="images/corp-event-lawn.jpg" alt="Guests playing lawn bowling on a sunny green" loading="lazy"><img src="images/corp-event-crowd.jpg" alt="Guests mingling in an elegant reception room" loading="lazy"></div></article>
+        <article class="corp-block corp-gifting">
+          <div class="corp-text"><h3 class="serif">Thoughtful gifting</h3><p>Gifting is another form of experience design. The details should feel considered, personal, and right for the recipient, never obligatory.</p><p class="corp-tags">Curation · Personalization · Vendors · Logistics · Delivery</p></div>
+          <div class="corp-stats"><div><strong class="serif">~400</strong><span>recipients in an annual corporate gifting program</span></div><div><strong class="serif">~70</strong><span>personalized luxury gifts</span></div><div><strong class="serif">Curated</strong><span>gift baskets featuring local, ethical, and B Corp products</span></div></div>
+        </article>
+      </section>
+
+      <section class="snap" id="snapshots">
+        <div class="snap-head"><div><p class="eyebrow">Snapshots</p><h2 class="serif">A few moments <em>from the day.</em></h2></div></div>
+        <div class="snap-chapter">
+          <div class="snap-chapter-head"><h3 class="script-title">E&amp;J</h3><span class="snap-note">A garden wedding</span>
+          <div class="snap-ctrl"><button type="button" class="snap-btn" data-snap="-1" aria-label="Previous photo">←</button><button type="button" class="snap-btn" data-snap="1" aria-label="Next photo">→</button></div></div>
+          <div class="snap-track" tabindex="0" aria-label="E&amp;J wedding photo slideshow"><figure class="snap-slide"><img src="images/ej-aisle.jpg" width="1535" height="1025" alt="A bride walking down a garden aisle toward a floral arch" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-couple-walking.jpg" width="1134" height="1700" alt="The couple walking hand in hand along a garden path" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-welcome-mirror.jpg" width="1133" height="1700" alt="An arched mirror welcome sign reading welcome to our love story" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-seating-sign.jpg" width="1024" height="1536" alt="A mirror seating chart framed by a hydrangea arch" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-centerpiece.jpg" width="1134" height="1700" alt="A lantern centerpiece with peach roses and a heart-shaped table number" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-tables.jpg" width="1700" height="1133" alt="A round reception table set beneath string lights" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-head-table.jpg" width="1700" height="1133" alt="A head table with a hydrangea and eucalyptus garland" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-florals.jpg" width="1133" height="1700" alt="Hydrangea, roses, and eucalyptus florals on the head table" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-cake.jpg" width="1134" height="1700" alt="A tiered wedding cake with hydrangea and two champagne flutes" loading="lazy"></figure><figure class="snap-slide"><img src="images/ej-late-night.jpg" width="1700" height="1134" alt="Wedding guests holding late-night ramen cups" loading="lazy"></figure></div>
         </div>
+        <div class="snap-chapter">
+          <div class="snap-chapter-head"><h3 class="script-title">K&amp;Y</h3><span class="snap-note">A ballroom wedding</span>
+          <div class="snap-ctrl"><button type="button" class="snap-btn" data-snap="-1" aria-label="Previous photo">←</button><button type="button" class="snap-btn" data-snap="1" aria-label="Next photo">→</button></div></div>
+          <div class="snap-track" tabindex="0" aria-label="K&amp;Y wedding photo slideshow"><figure class="snap-slide"><img src="images/ky-arrival.jpg" width="1024" height="1334" alt="A bride holding calla lilies beside the entrance plaque of the Vancouver Club" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-ceremony-table.jpg" width="1024" height="768" alt="A ceremony table styled with a mirror, candles, florals, and traditional sweets" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-ballroom-overhead.jpg" width="1024" height="768" alt="A grand ballroom with round tables set for dinner, seen from above" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-ballroom-dinner.jpg" width="1448" height="1086" alt="Guests seated for dinner in a candlelit ballroom under chandeliers" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-roses-10.jpg" width="1024" height="1365" alt="A white rose centerpiece with taper candles and a table number" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-roses-9.jpg" width="1024" height="1365" alt="White roses and candles in glass cylinders tied with a satin ribbon" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-head-table.jpg" width="1024" height="1365" alt="A head table dressed with a baby's breath garland and hydrangea arrangements" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-florals.jpg" width="1024" height="1365" alt="White hydrangea, roses, and baby's breath with tea lights" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-couple-seated.jpg" width="1024" height="1365" alt="A couple seated together during the ceremony" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-bouquet.jpg" width="1024" height="1365" alt="A bride holding a calla lily bouquet tied with a white bow" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-cocktail.jpg" width="1448" height="1086" alt="Guests mingling under a brass chandelier during cocktail hour" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-cake.jpg" width="1024" height="1365" alt="A heart-shaped cake with buttercream piping on a silver stand" loading="lazy"></figure><figure class="snap-slide"><img src="images/ky-desserts.jpg" width="1024" height="1365" alt="A dessert table with macarons, cream puffs, and pastries" loading="lazy"></figure></div>
+        </div>
+        <p class="snap-more">More from our events on <a href="https://www.instagram.com/therdvcollective/" target="_blank" rel="noopener">Instagram @therdvcollective</a></p>
       </section>
 
       <section class="founder-note">
+        <img class="founder-photo" src="images/alaina-wong.jpg" alt="Alaina Wong, founder of Rendezvous Collective" loading="lazy">
         <span class="eyebrow">A personal way of working</span>
         <div class="founder-quote serif">“A beautiful gathering starts with paying attention—to the people, the place, and what brings them there.”</div>
         <p>Founder-led, relationship-first, and rooted in Vancouver. Rendezvous Collective brings strategic care and warm hospitality to every detail.</p>
-        <span class="signature serif">Rendezvous Collective</span>
+        <span class="signature serif">Alaina Wong, Founder</span>
       </section>
 
       <section class="contact" id="contact">
-        <div class="contact-top"><span class="eyebrow">The beginning of something</span><span class="eyebrow">Vancouver, BC · Working everywhere</span></div>
+        <div class="contact-top"><span class="eyebrow">The beginning of something</span><div class="social-links"><a href="https://www.instagram.com/therdvcollective/" target="_blank" rel="noopener" aria-label="Rendezvous Collective on Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="mailto:alaina@rdvcollective.com" aria-label="Email Rendezvous Collective"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/></svg></a></div></div>
         <h2 class="serif">Have a gathering<br>in <em>mind?</em></h2>
-        <div class="contact-bottom"><p>Tell us what you’re dreaming up. We’d love to hear what matters most—and help you find a way to bring it to life.</p><button class="contact-cta" type="button" data-open-inquiry>Start an inquiry <span aria-hidden="true">↗</span></button></div>
+        <div class="contact-bottom"><p>Tell us what you’re dreaming up. We’d love to hear what matters most—and help you find a way to bring it to life. Or write to us at <a class="mail-link" href="mailto:alaina@rdvcollective.com">alaina@rdvcollective.com</a>.</p><a class="contact-cta" href="mailto:alaina@rdvcollective.com?subject=Let%27s%20Plan%20Something%20Together">Start an inquiry <span aria-hidden="true">↗</span></a></div>
       </section>
 
       <footer class="footer">
-        <a href="#top" class="brand footer-brand" aria-label="Rendezvous Collective home"><img class="brand-logo" src="images/rdv-monogram.png" alt=""></a>
+        <a href="#top" class="brand footer-brand" aria-label="Rendezvous Collective home"><img class="brand-logo" src="images/rdv-horizontal-logo.png" alt=""></a>
         <span>Places. People. Curated Moments.</span><span>Vancouver, British Columbia</span>
+        <div class="footer-social social-links"><a href="https://www.instagram.com/therdvcollective/" target="_blank" rel="noopener" aria-label="Rendezvous Collective on Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="mailto:alaina@rdvcollective.com" aria-label="Email Rendezvous Collective"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/></svg></a><a class="footer-mail" href="mailto:alaina@rdvcollective.com">alaina@rdvcollective.com</a></div>
         <button type="button" data-scroll="top">Back to top ↑</button>
       </footer>
     </main>
 
-    <div class="modal-backdrop" id="inquiry-modal" hidden>
-      <section class="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="inquiry-title">
-        <button class="modal-close" type="button" data-close-inquiry aria-label="Close inquiry"><span aria-hidden="true">×</span></button>
-        <p class="eyebrow">Let’s start with a hello</p>
-        <h2 class="serif" id="inquiry-title">Tell us a little<br>about your <em>gathering.</em></h2>
-        <p class="modal-explain">This note stays on your device. To reach Rendezvous Collective, please use your preferred email app to share your inquiry; a direct contact address has not been provided here.</p>
-        <form id="inquiry-form">
-          <label>Your name<input required name="name" autocomplete="name" placeholder="How should we address you?"></label>
-          <label>What are you imagining?<textarea required name="message" rows="3" placeholder="A few details, a big idea, or just where you are in the process…"></textarea></label>
-          <button class="contact-cta" type="submit">Prepare my note <span aria-hidden="true">↗</span></button>
-        </form>
-      </section>
-    </div>
-    <div class="notice" id="inquiry-notice" role="status" hidden>Your note is ready to share. No message has been sent.</div>
   </body>
 </html>

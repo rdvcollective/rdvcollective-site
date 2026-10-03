@@ -1,32 +1,12 @@
 (() => {
   const menuToggle = document.getElementById("menu-toggle");
   const mainNav = document.getElementById("main-nav");
-  const inquiryModal = document.getElementById("inquiry-modal");
-  const inquiryForm = document.getElementById("inquiry-form");
-  const inquiryNotice = document.getElementById("inquiry-notice");
-  const closeInquiryButton = document.querySelector("[data-close-inquiry]");
-  let previousFocus = null;
-  let noticeTimeout;
 
   function closeMenu() {
     mainNav.classList.remove("nav-open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
     menuToggle.classList.remove("menu-open");
-  }
-
-  function openInquiry() {
-    previousFocus = document.activeElement;
-    inquiryModal.hidden = false;
-    document.body.classList.add("modal-open");
-    closeMenu();
-    inquiryModal.querySelector('input[name="name"]').focus();
-  }
-
-  function closeInquiry() {
-    inquiryModal.hidden = true;
-    document.body.classList.remove("modal-open");
-    if (previousFocus instanceof HTMLElement) previousFocus.focus();
   }
 
   function scrollToSection(id) {
@@ -46,31 +26,21 @@
     button.addEventListener("click", () => scrollToSection(button.dataset.scroll));
   });
 
-  document.querySelectorAll("[data-open-inquiry]").forEach((button) => {
-    button.addEventListener("click", openInquiry);
+  document.querySelectorAll(".nav-inquire").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 
-  closeInquiryButton.addEventListener("click", closeInquiry);
-  inquiryModal.addEventListener("click", (event) => {
-    if (event.target === inquiryModal) closeInquiry();
+  document.querySelectorAll(".snap-chapter").forEach((chapter) => {
+    const track = chapter.querySelector(".snap-track");
+    chapter.querySelectorAll("[data-snap]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        track.scrollBy({ left: Number(btn.dataset.snap) * track.clientWidth * 0.8, behavior: "smooth" });
+      });
+    });
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      if (!inquiryModal.hidden) closeInquiry();
-      closeMenu();
-    }
-  });
-
-  inquiryForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    closeInquiry();
-    inquiryForm.reset();
-    inquiryNotice.hidden = false;
-    window.clearTimeout(noticeTimeout);
-    noticeTimeout = window.setTimeout(() => {
-      inquiryNotice.hidden = true;
-    }, 4500);
+    if (event.key === "Escape") closeMenu();
   });
 
   if (window.location.hash) {
