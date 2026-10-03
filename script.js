@@ -1,42 +1,48 @@
 (() => {
-  const menuToggle = document.getElementById("menu-toggle");
-  const mainNav = document.getElementById("main-nav");
+  const header = document.querySelector("[data-header]");
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const nav = document.getElementById("main-nav");
+  const heroImage = document.querySelector(".hero-media img");
+  const reveals = [...document.querySelectorAll(".reveal")];
 
-  function closeMenu() {
-    mainNav.classList.remove("nav-open");
+  const closeMenu = () => {
+    if (!nav || !menuToggle) return;
+    nav.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
-    menuToggle.classList.remove("menu-open");
-  }
+  };
 
-  function scrollToSection(id) {
-    const target = document.getElementById(id);
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-    closeMenu();
-  }
-
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("nav-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-    menuToggle.classList.toggle("menu-open", isOpen);
+  menuToggle?.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
 
-  document.querySelectorAll("[data-scroll]").forEach((button) => {
-    button.addEventListener("click", () => scrollToSection(button.dataset.scroll));
-  });
-
-  document.querySelectorAll(".nav-inquire").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
+  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
 
-  if (window.location.hash) {
-    window.requestAnimationFrame(() => {
-      document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "auto" });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
     });
-  }
+  }, { threshold: 0.12 });
+
+  reveals.forEach((el) => observer.observe(el));
+
+  const updateScrollState = () => {
+    const y = window.scrollY || 0;
+    header?.classList.toggle("scrolled", y > 60);
+
+    if (heroImage && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+      heroImage.style.transform = `translate3d(0,${Math.min(y * 0.08, 50)}px,0) scale(1.04)`;
+    }
+  };
+
+  updateScrollState();
+  window.addEventListener("scroll", updateScrollState, { passive: true });
 })();
