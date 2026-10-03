@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-500.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/dm-sans-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-500.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-italic-500.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-italic-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --ink: #302824;
+  --paper: #f5f1e9;
+  --wine: #713d49;
+  --clay: #b57860;
+  --sage: #777d69;
+  --app-font-sans: "DM Sans", Arial, sans-serif;
+  --app-font-serif: "Playfair Display", Georgia, serif;
+}
+.serif { font-family: var(--app-font-serif); }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .19em;
+  font-size: .66rem;
+  font-weight: 600;
+}
+.reveal { animation: rise-in .8s cubic-bezier(.2,.7,.2,1) both; }
+.reveal-delay { animation-delay: .16s; }
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--app-font-sans);
+  line-height: 1.5;
+}
+img { max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+::selection { background: #713d49; color: #fffaf2; }
+:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+body.modal-open { overflow: hidden; }
+.menu-icon {
+  display: block;
+  position: relative;
+  width: 19px;
+  height: 14px;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  font-size: 0;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  border-top: 1px solid currentColor;
+  transition: transform .2s ease;
+}
+.menu-open .menu-icon { border-color: transparent; }
+.menu-open .menu-icon::before { transform: rotate(45deg); }
+.menu-open .menu-icon::after { transform: rotate(-45deg); }
+.occasion-list div .occasion-arrow { margin-left: auto; color: var(--wine); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+main { color: var(--ink); overflow: clip; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.site-header { position: sticky; top: 0; z-index: 20; height: 82px; padding: 0 7.1%; display: flex; justify-content: space-between; align-items: center; background: rgba(245,241,233,.94); border-bottom: 1px solid rgba(80,64,52,.13); backdrop-filter: blur(14px); }
+.brand { display: flex; align-items: center; justify-content: flex-start; text-decoration: none; color: var(--ink); line-height: 1; width: 82px; min-width: 82px; height: 76px; }
+.brand-logo { width: 100%; height: 100%; object-fit: contain; display: block; mix-blend-mode: multiply; }
+.nav { display: flex; align-items: center; gap: clamp(24px,3.2vw,52px); }
+.nav button, .footer button { border: 0; background: transparent; padding: 8px 0; font-size: 12px; letter-spacing: .02em; color: #514a43; transition: color .2s; }
+.nav button:hover, .footer button:hover { color: var(--wine); }
+.nav .nav-inquire { display: inline-flex; align-items: center; gap: 9px; color: var(--wine); }
+.menu-toggle { display: none; border: 0; background: none; }
+.hero { position: relative; min-height: 650px; display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; padding: 56px 7.1% 72px; gap: 5vw; }
+.hero-copy { max-width: 590px; padding: 35px 0 45px; }
+.eyebrow { color: #776b60; }
+.hero h1 { font-size: clamp(52px,6vw,86px); font-weight: 500; letter-spacing: -.055em; line-height: 1.06; margin: 30px 0 27px; }
+.serif em { color: var(--wine); font-weight: 500; }
+.hero-intro { max-width: 460px; color: #645b52; font-size: 15px; line-height: 1.8; margin: 0 0 28px; }
+.text-link { display: inline-flex; align-items: center; gap: 13px; padding: 5px 0 8px; background: none; border: 0; border-bottom: 1px solid #987f70; font-size: 12px; letter-spacing: .02em; transition: gap .2s ease,color .2s; }
+.text-link:hover { gap: 20px; color: var(--wine); }
+.hero-visual { position: relative; height: min(67vh,570px); min-height: 430px; }
+.hero-visual img, .intro-image img, .occasion-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-visual img { object-position: 57% 50%; }
+.image-note { position: absolute; left: 16px; bottom: 15px; font: italic 13px var(--app-font-serif); color: #fff9ef; text-shadow: 0 1px 7px #242018; }
+.hero-stamp { position: absolute; width: 106px; height: 106px; border-radius: 50%; background: var(--paper); left: -50px; bottom: 55px; display: flex; align-items: center; justify-content: center; gap: 5px; color: var(--wine); transform: rotate(-10deg); }
+.hero-stamp span { font: italic 45px var(--app-font-serif); }
+.hero-stamp small { font-size: 7px; line-height: 1.4; text-transform: uppercase; letter-spacing: .1em; }
+.hero-side-note { position: absolute; right: 2.2%; top: 45%; writing-mode: vertical-rl; letter-spacing: .21em; font-size: 8px; color: #8f8377; }
+.intro-band { background: #ebe5d9; padding: 96px 11% 105px; position: relative; }
+.section-index { display: flex; align-items: center; gap: 26px; margin-bottom: 48px; }
+.index-line { width: 70px; height: 1px; background: #aa9788; }
+.intro-content { display: grid; grid-template-columns: 1.1fr .9fr; gap: 9%; align-items: end; max-width: 1050px; }
+.intro-content h2 { font-size: clamp(48px,6vw,78px); line-height: 1.08; letter-spacing: -.05em; font-weight: 500; margin: 0; }
+.intro-text { max-width: 440px; font-size: 14px; line-height: 1.85; color: #5f574f; }
+.intro-text p { margin: 0 0 15px; }
+.intro-text .text-link { margin-top: 10px; color: var(--ink); }
+.intro-image { height: 290px; width: 44%; margin: 62px 0 0 auto; position: relative; }
+.intro-image:before { content: ''; position: absolute; inset: -12px 12px 12px -12px; border: 1px solid #b4a594; pointer-events: none; }
+.services { padding: 112px 11% 120px; }
+.services-heading { display: flex; justify-content: space-between; align-items: end; gap: 50px; margin-bottom: 54px; }
+.services-heading h2, .occasion-copy h2 { font-size: clamp(47px,5.5vw,72px); font-weight: 500; line-height: 1.08; letter-spacing: -.05em; margin: 20px 0 0; }
+.services-heading > p { max-width: 340px; margin: 0 0 5px; font-size: 14px; line-height: 1.8; color: #655c54; }
+.service-list { border-top: 1px solid #cfc5b8; }
+.service-row { display: grid; grid-template-columns: 70px 1.1fr 1fr 28px; gap: 24px; align-items: center; min-height: 94px; border-bottom: 1px solid #cfc5b8; }
+.service-n { font-size: 10px; color: #977e70; letter-spacing: .12em; }
+.service-row h3 { font-size: clamp(19px,2vw,25px); letter-spacing: -.025em; font-weight: 500; margin: 0; }
+.service-row p { font-size: 13px; line-height: 1.65; color: #72685f; margin: 0; max-width: 385px; }
+.service-mark { text-align: right; color: #8d6d62; opacity: .7; transition: transform .2s; }
+.service-row:hover .service-mark { transform: translate(3px,-3px); }
+.wedding-suite { background: #efe9df; padding: 116px 11% 120px; scroll-margin-top: 82px; }
+.wedding-suite-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 9%; align-items: end; margin-bottom: 52px; }
+.wedding-suite-heading h2 { font-size: clamp(47px,5.5vw,72px); font-weight: 500; line-height: 1.08; letter-spacing: -.05em; margin: 20px 0 0; }
+.wedding-suite-heading > p { max-width: 390px; margin: 0 0 5px; font-size: 14px; line-height: 1.8; color: #655c54; }
+.wedding-suite-feature { display: grid; grid-template-columns: .95fr 1.05fr; gap: 8%; align-items: center; }
+.wedding-plan-list { border-top: 1px solid #cfc5b8; }
+.wedding-plan { display: grid; grid-template-columns: 38px 1fr; gap: 16px; align-items: start; padding: 21px 0; border-bottom: 1px solid #cfc5b8; }
+.wedding-plan h3 { font-size: clamp(20px,2.2vw,26px); font-weight: 500; letter-spacing: -.025em; margin: 0 0 7px; }
+.wedding-plan p { color: #72685f; font-size: 13px; line-height: 1.7; margin: 0; }
+.wedding-custom-note { color: #71665d; font-size: 12px; line-height: 1.75; margin: 19px 0 0; }
+.wedding-feature-photo { position: relative; height: min(44vw,510px); min-height: 380px; margin: 0; }
+.wedding-feature-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wedding-feature-photo figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 35px 18px 17px; color: #fff9ef; font: italic 15px var(--app-font-serif); background: linear-gradient(transparent,rgba(29,23,20,.5)); }
+.wedding-support-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 34px; border-top: 1px solid #cfc5b8; margin-top: 82px; padding-top: 26px; }
+.wedding-support-card h3 { font-size: 24px; font-weight: 500; line-height: 1.2; margin: 0 0 13px; }
+.wedding-support-card p { color: #6a6057; font-size: 12px; line-height: 1.8; margin: 0; }
+.wedding-gallery { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; align-items: start; margin-top: 48px; scroll-margin-top: 82px; }
+.wedding-gallery figure { margin: 0; }
+.wedding-gallery figure:nth-child(2) { margin-top: 36px; }
+.wedding-gallery img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.wedding-gallery figcaption { color: #72675e; font: italic 14px var(--app-font-serif); margin-top: 12px; }
+.occasion-section { background: #e9e1d5; display: grid; grid-template-columns: 1fr 1fr; min-height: 650px; }
+.occasion-image { position: relative; min-height: 550px; }
+.occasion-image img { position: absolute; inset: 0; }
+.occasion-copy { padding: 85px 12% 70px 11%; align-self: center; }
+.occasion-copy h2 { font-size: clamp(46px,5.1vw,68px); }
+.occasion-lead { max-width: 395px; color: #635950; font-size: 14px; line-height: 1.8; margin: 25px 0 35px; }
+.occasion-list { border-top: 1px solid #c9bcad; }
+.occasion-list div { min-height: 58px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #c9bcad; font: 18px var(--app-font-serif); }
+.occasion-list div span { font: 9px 'DM Sans',sans-serif; letter-spacing: .12em; color: #927c6e; }
+.occasion-list div svg { margin-left: auto; color: var(--wine); }
+.founder-note { text-align: center; padding: 125px 20px 120px; max-width: 920px; margin: auto; }
+.founder-quote { font-size: clamp(32px,4.2vw,54px); line-height: 1.25; letter-spacing: -.04em; margin: 30px auto 25px; max-width: 830px; }
+.founder-note > p { color: #6b6057; font-size: 13px; line-height: 1.7; max-width: 500px; margin: 0 auto 24px; }
+.signature { font-style: italic; color: var(--wine); font-size: 20px; }
+.contact { background: var(--wine); color: #f7f0e6; padding: 72px 11% 74px; }
+.contact .eyebrow { color: #d8c2b4; }
+.contact-top { display: flex; justify-content: space-between; }
+.contact h2 { font-size: clamp(55px,7vw,92px); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; margin: 55px 0 40px; }
+.contact h2 em { color: #d6aa92; }
+.contact-bottom { display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+.contact-bottom p { max-width: 420px; color: #e4d3c7; font-size: 14px; line-height: 1.8; margin: 0; }
+.contact-cta { background: var(--paper); color: var(--wine); border: 1px solid var(--paper); display: inline-flex; align-items: center; justify-content: center; gap: 24px; padding: 15px 20px; min-width: 180px; font-size: 12px; transition: background .2s,color .2s; }
+.contact-cta:hover { background: transparent; color: #fff4e9; }
+.footer { min-height: 110px; padding: 20px 7.1%; display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #776d64; font-size: 10px; }
+.footer-brand { width: 76px; min-width: 76px; height: 76px; }
+.footer button { font-size: 10px; color: #776d64; }
+.modal-backdrop { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 20px; background: rgba(33,26,22,.55); backdrop-filter: blur(5px); }
+.inquiry-modal { position: relative; width: min(100%,540px); background: var(--paper); padding: 47px clamp(26px,6vw,60px) 50px; box-shadow: 0 22px 80px #211a1655; animation: rise-in .25s ease-out; }
+.inquiry-modal h2 { font-size: clamp(40px,6vw,56px); line-height: 1.08; font-weight: 500; letter-spacing: -.045em; margin: 19px 0 15px; }
+.modal-close { position: absolute; right: 18px; top: 18px; padding: 7px; border: 0; background: none; color: #6a5d54; }
+.modal-explain { font-size: 12px; line-height: 1.7; color: #74695f; margin: 0 0 24px; }
+.inquiry-modal form { display: grid; gap: 18px; }
+.inquiry-modal label { display: grid; gap: 8px; font-size: 11px; letter-spacing: .04em; color: #55483f; }
+.inquiry-modal input, .inquiry-modal textarea { border: 1px solid #cfc2b5; border-radius: 0; background: #faf7f1; font: 13px 'DM Sans',sans-serif; padding: 12px; color: var(--ink); resize: vertical; outline-color: var(--wine); }
+.inquiry-modal .contact-cta { justify-self: start; background: var(--wine); color: var(--paper); border-color: var(--wine); margin-top: 2px; }
+.inquiry-modal .contact-cta:hover { background: transparent; color: var(--wine); }
+.notice { position: fixed; z-index: 50; bottom: 24px; left: 50%; transform: translateX(-50%); background: #352b26; color: #f5f1e9; padding: 14px 20px; font-size: 12px; box-shadow: 0 8px 30px #241c1840; width: max-content; max-width: calc(100% - 36px); }
+@media (max-width: 760px) {
+ .site-header { height: 72px; padding: 0 6%; }
+  .brand { align-items: center; min-width: 70px; width: 70px; height: 66px; }
+ .menu-toggle { display: block; padding: 9px; color: var(--wine); }
+ .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 19px 6% 25px; background: var(--paper); border-bottom: 1px solid #d8cfc3; align-items: stretch; gap: 4px; flex-direction: column; }
+ .nav.nav-open { display: flex; }
+ .nav button { text-align: left; padding: 13px 0; }
+ .nav .nav-inquire { border-top: 1px solid #d8cfc3; margin-top: 5px; padding-top: 18px; }
+ .hero { display: flex; flex-direction: column; align-items: stretch; padding: 45px 6% 65px; gap: 27px; min-height: auto; }
+ .hero-copy { padding: 8px 0 0; }
+ .hero h1 { font-size: clamp(49px,12vw,72px); margin: 23px 0 20px; }
+ .hero-intro { font-size: 14px; }
+ .hero-visual { height: 390px; min-height: 0; margin-left: 7%; }
+ .hero-stamp { width: 82px; height: 82px; left: -36px; bottom: 37px; }
+ .hero-stamp span { font-size: 36px; }
+ .hero-side-note { display: none; }
+ .intro-band { padding: 68px 7% 75px; }
+ .section-index { margin-bottom: 34px; gap: 14px; }
+ .section-index .eyebrow { font-size: 9px; letter-spacing: .12em; }
+ .intro-content { display: block; }
+ .intro-content h2 { font-size: clamp(48px,11vw,68px); margin-bottom: 27px; }
+ .intro-text { font-size: 13px; }
+ .intro-image { width: 84%; height: 225px; margin-top: 43px; }
+ .services { padding: 73px 7% 80px; }
+ .services-heading { display: block; margin-bottom: 36px; }
+ .services-heading h2, .occasion-copy h2 { font-size: 52px; }
+ .services-heading > p { margin-top: 20px; font-size: 13px; }
+ .service-row { grid-template-columns: 32px 1fr 22px; gap: 12px; padding: 17px 0; min-height: 0; }
+ .service-row h3 { font-size: 20px; }
+ .service-row p { grid-column: 2 / 3; font-size: 12px; }
+ .service-mark { grid-column: 3; grid-row: 1; }
+   .wedding-suite { padding: 76px 7% 82px; scroll-margin-top: 72px; }
+  .wedding-suite-heading { grid-template-columns: 1fr; gap: 19px; margin-bottom: 34px; }
+  .wedding-suite-heading h2 { font-size: 51px; }
+  .wedding-suite-heading > p { font-size: 13px; }
+  .wedding-suite-feature { grid-template-columns: 1fr; gap: 28px; }
+  .wedding-feature-photo { order: -1; height: 340px; min-height: 0; }
+  .wedding-plan { padding: 19px 0; }
+  .wedding-plan h3 { font-size: 21px; }
+  .wedding-plan p { font-size: 12px; }
+  .wedding-support-grid { grid-template-columns: 1fr; gap: 0; margin-top: 53px; padding-top: 0; }
+  .wedding-support-card { border-top: 1px solid #cfc5b8; padding: 21px 0; }
+  .wedding-support-card h3 { font-size: 23px; }
+   .wedding-gallery { gap: 11px; margin-top: 32px; scroll-margin-top: 72px; }
+  .wedding-gallery figure:nth-child(2) { margin-top: 20px; }
+  .wedding-gallery figcaption { font-size: 12px; }
+ .occasion-section { display: flex; flex-direction: column; }
+ .occasion-image { min-height: 360px; height: 360px; }
+ .occasion-copy { padding: 59px 7% 68px; }
+ .occasion-copy h2 { font-size: 51px; }
+ .occasion-lead { font-size: 13px; }
+ .occasion-list div { font-size: 17px; }
+ .founder-note { padding: 88px 8% 82px; }
+ .founder-quote { font-size: 34px; }
+ .contact { padding: 48px 7% 56px; }
+ .contact-top { flex-direction: column; gap: 12px; }
+ .contact-top .eyebrow:last-child { font-size: 9px; }
+ .contact h2 { font-size: 61px; margin: 52px 0 28px; }
+ .contact-bottom { align-items: flex-start; flex-direction: column; }
+ .contact-bottom p { font-size: 13px; }
+ .footer { padding: 24px 7%; flex-wrap: wrap; justify-content: space-between; font-size: 9px; }
+ .footer > span:nth-child(2) { order: 3; width: 100%; }
+ .footer > span:nth-child(3) { display: none; }
+}
+@media (max-width: 390px) { .hero-visual { height: 320px; } .contact h2 { font-size: 52px; } .founder-quote { font-size: 30px; } }
